@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Spam Classifer</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	
+</head>
+<body>
+
+
+<nav style="margin-top: 20px; text-transform: uppercase;">
+	<center><h3 class="code">Spam Classifier<h3></center>
+</nav>
+
+<hr>
+	<div class="container">
+		<div class="form-group">
+			<form action = {{url_for("predict")}} method="POST">
+				<label for="input"><h4>Write Your Message:</h4></label>
+				 <textarea class="form-control" rows="5" id="comment" name="message"></textarea>
+				 <br>
+				<center>
+					<input type="submit" class="btn btn-info" value="predict">
+				</center>
+		</form>
+		</div>
+	</div>
+<hr>
+
+	<div class="container">
+	{% if prediction == 1 %}
+	<h3 class="alert alert-danger">Spam</h3>
+	{% elif prediction == 0 %}
+	<h3 class="alert alert-success">Not Spam</h3>
+	{% endif %}
+	</div>
+
+
+<hr><br>
+<footer>
+	<div class="container">
+	<center><h3>Get In Touch</h3></center>
+    <hr>
+        <div class="text-center center-block">
+                <a href="https://www.facebook.com/ht16998"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+	            <a href="https://twitter.com/ht16998"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+	            <a href="https://www.linkedin.com/in/ht16998/"><i id="social-gp" class="fa fa-linkedin-square fa-3x social"></i></a>
+	            <a href="mailto:himanshutripathi16.ht@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+	            <hr>
+	            <p>© 2019, Himanshu Tripathi All right reserved.</p>
+	</div>
+
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
